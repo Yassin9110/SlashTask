@@ -42,7 +42,7 @@ if uploaded_file:
         image_with_boxes = draw_boxes(image, detections, names)
         st.image(image_with_boxes, caption="Detected Objects", use_column_width=True)
         
-        # Create a DataFrame for the detection details
+        # Create a DataFrame for the detection 
         detection_details = []
         for box in detections:
             x1, y1, x2, y2, confidence, class_id = box[:6]
