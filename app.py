@@ -21,9 +21,9 @@ def draw_boxes(image, detections, names):
     for box in detections:
         x1, y1, x2, y2, confidence, class_id = box[:6]
         x1, y1, x2, y2 = map(int, [x1, y1, x2, y2])
-        label = f"{names[int(class_id)]}: {confidence:.2f}"
+        label = f"{names[int(class_id)]}: {confidence:.1f}"
         cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
-        cv2.putText(img, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36, 255, 12), 2)
+        cv2.putText(img, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (36, 255, 12), 2)
     return img
 
 
